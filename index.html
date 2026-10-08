@@ -11,6 +11,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
   <style>
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+    @font-face {
+      font-family: 'SBAggro';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'SBAggro';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroM.woff') format('woff');
+      font-weight: 500; font-style: normal; font-display: swap;
+    }
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Poppins:wght@700;800&display=swap');
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,11 +33,11 @@
       --gray-light: #f6f6f6;
       --border: #e0e0e0;
       --white: #fff;
-      --accent: #21DDA9;
-      --accent-dark: #17B88A;
-      --accent-soft: #E4FBF4;
+      --accent: #7631F5;
+      --accent-dark: #5A1FCC;
+      --accent-soft: #F0E9FF;
       --pink: #F10EE2;
-      --grad: linear-gradient(90deg, #1AAFFF 0%, #F10EE2 100%);
+      --grad: linear-gradient(90deg, #7631F5 0%, #F10EE2 100%);
       --dark-bg: #121212;
       --nav-bg: #121212;
       --card-bg: #1C1C1C;
@@ -48,7 +58,7 @@
     #scroll-bg {
       position: fixed;
       inset: 0;
-      background: linear-gradient(118deg, #0B0B0B 0%, #121212 34%, #15241F 66%, #0E2A24 100%);
+      background: linear-gradient(118deg, #0B0B0B 0%, #121212 32%, #1E1136 66%, #2A1551 100%);
       overflow: hidden;
       z-index: -1;
       pointer-events: none;
@@ -1124,6 +1134,38 @@
     .metric-label { color: var(--dyn-fg-dim); }
 
     /* ── About 이후: 밝은 무드 (흰 배경 + 하늘색 포인트) ── */
+    /* CAREER 전용 — 슈퍼센트 사이트의 블랙 섹션 */
+    .sec-night {
+      background: #0D0D0D;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      --white: #FFFFFF;
+      --on-dark: rgba(255,255,255,0.74);
+      --on-dark-dim: rgba(255,255,255,0.45);
+      --on-dark-line: rgba(255,255,255,0.14);
+      --card-bg: #161616;
+      --dark-bg: #0D0D0D;
+      --border: rgba(255,255,255,0.12);
+    }
+    .sec-night .section-label { color: rgba(255,255,255,0.5); }
+    .sec-night .section-title { color: #FFFFFF; }
+    .sec-night .career-company { color: #FFFFFF; }
+    .sec-night .career-role { color: rgba(255,255,255,0.92); }
+    .sec-night .career-period { color: rgba(255,255,255,0.5); }
+    .sec-night .career-bullets li { color: rgba(255,255,255,0.76); }
+    .sec-night .career-bullets li strong { color: #FFFFFF; }
+    .sec-night .timeline-year { color: rgba(255,255,255,0.55); }
+    .sec-night .timeline::before { background: rgba(255,255,255,0.16); }
+    .sec-night .timeline-dot { background: #FFFFFF; border-color: #0D0D0D; }
+    /* 해시태그: 흰 선 스타일 */
+    .sec-night .tag {
+      background: transparent;
+      color: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.45);
+      padding: 5px 14px;
+      transition: background .25s ease, color .25s ease, border-color .25s ease;
+    }
+    .sec-night .tag:hover { background: #FFFFFF; color: #0D0D0D; border-color: #FFFFFF; }
+
     .sec-dark {
       background: #F7F5FF;
       border-bottom: 1px solid var(--border);
@@ -1182,7 +1224,7 @@ nav ul a:is(:hover, :focus-visible, .active)::after { transform: scaleX(1); }
 .section-title, .sec-dark .section-title { position: relative; border-bottom-color: transparent; }
 .section-title::after {
   content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
-  background: linear-gradient(90deg, #21DDA9, #1AAFFF 55%, #F10EE2);
+  background: linear-gradient(90deg, #7631F5, #1AAFFF 55%, #F10EE2);
   transform-origin: left; transform: scaleX(1);
 }
 html.brand-motion .brand-reveal {
@@ -1252,7 +1294,13 @@ html.brand-motion .sticker-stack.is-revealed .sticker-art { opacity: 1; transfor
   .fade-up { opacity: 1; transform: none; }
 }
 
-  </style>
+  /* 슈퍼센트 사이트 제목 폰트 */
+.hero-title, .section-title, .metric-num, .philosophy-quote,
+nav .logo, .hero-wordmark, .project-card-title, .career-company {
+  font-family: 'SBAggro', 'Pretendard', 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.01em;
+}
+</style>
 <!-- Embedded Poppins subset: font license
 Copyright 2020 The Poppins Project Authors (https://github.com/itfoundry/Poppins)
 
@@ -1356,7 +1404,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
   <svg class="cj-blossom" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
     <g class="blossom-spin">
       <g transform="translate(500 500)">
-        <path fill="#21DDA9" transform="rotate(0) translate(0 -250)"   d="M0,-580 C265,-580 455,-345 455,-80 C455,200 250,400 0,400 C-250,400 -455,200 -455,-80 C-455,-345 -265,-580 0,-580 Z"/>
+        <path fill="#7631F5" transform="rotate(0) translate(0 -250)"   d="M0,-580 C265,-580 455,-345 455,-80 C455,200 250,400 0,400 C-250,400 -455,200 -455,-80 C-455,-345 -265,-580 0,-580 Z"/>
         <path fill="#1AAFFF" transform="rotate(120) translate(0 -250)" d="M0,-580 C265,-580 455,-345 455,-80 C455,200 250,400 0,400 C-250,400 -455,200 -455,-80 C-455,-345 -265,-580 0,-580 Z"/>
         <path fill="#F10EE2" transform="rotate(240) translate(0 -250)" d="M0,-580 C265,-580 455,-345 455,-80 C455,200 250,400 0,400 C-250,400 -455,200 -455,-80 C-455,-345 -265,-580 0,-580 Z"/>
       </g>
@@ -1414,7 +1462,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <li><strong>파이프라인 설계</strong> — 나노바나나·Gemini → Photoshop → Kling으로 흐름을 세워 신규 컷 <strong>3주 → 4일</strong></li>
         <li><strong>캐릭터 일관성</strong> — 역할별 레퍼런스·충돌 우선순위 템플릿으로 고정, 생성 AI 릴스 <strong>274만</strong> (기준선 30만)</li>
         <li><strong>모델 실험·비교</strong> — 새 도구는 개인 채널에서 먼저 쓰고, 어느 단계에 맡길지 순서를 기록</li>
-        <li><strong>제작팀 협업</strong> — 두 채널 합산 주 4편·100편 이상 발행, 수정 요청의 판단 경계를 먼저 고정</li>
+        <li><strong>제작팀 협업</strong> — 두 채널 합산 주 4편·숏폼 <strong>100편 이상</strong> 발행(누적 조회수 약 <strong>1억 회</strong>), 수정 요청의 판단 경계를 먼저 고정</li>
         <li><strong>편집·후반</strong> — Premiere Pro·After Effects로 컷 편집과 모션, Photoshop 후보정으로 AI 결과물의 어색한 부분을 보완</li>
       </ul>
     </div>
@@ -1425,17 +1473,18 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 <div class="metrics" id="metrics">
   <div class="metrics-inner">
     <div class="metric-item">
-      <div class="metric-num">274만</div>
-      <div class="metric-label">생성 AI로 만든 릴스 조회수<br>밈 편집 숏폼 기준선 30만 대비 9배</div>
+      <div class="metric-num">1억+</div>
+      <div class="metric-label">담당 숏폼 누적 조회수<br>유튜브·인스타그램 100편 이상</div>
     </div>
     <div class="metric-item">
       <div class="metric-num">3주 → 4일</div>
-      <div class="metric-label">신규 컷 제작 기간<br>레퍼런스 템플릿화로 팀 제작 방식으로 정착</div>
+      <div class="metric-label">생성 AI 파이프라인 정착 후<br>신규 컷 제작 기간</div>
     </div>
     <div class="metric-item">
-      <div class="metric-num">+510,000</div>
-      <div class="metric-label">썸네일 개선 전후 4개월, 노출을 통한 클릭 증가<br>CTR 5.7% → 6.0%, 같은 기간 구독자 +12%</div>
+      <div class="metric-num">274만</div>
+      <div class="metric-label">생성 AI로 만든 장면을 넣은 릴스<br>좋아요 11.9만</div>
     </div>
+  </div>
   </div>
 </div>
 
@@ -1463,7 +1512,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 </section>
 
 <!-- CAREER -->
-<section id="career" class="sec-dark">
+<section id="career" class="sec-night">
   <div class="section-inner">
     <p class="section-label">Experience</p>
     <h2 class="section-title">CAREER</h2>
@@ -2425,7 +2474,7 @@ if (ctaSection) {
 }
 
 /* ── 지표 카운트업 (보이면 실행, 완전히 사라지면 리셋) ── */
-const metricTargets = ['274만', '3주 → 4일', '+510,000'];
+const metricTargets = ['1억+', '3주 → 4일', '274만'];
 const metricItems = document.querySelectorAll('.metric-item');
 let metricsAnimated = false;
 let metricRafIds = [];
@@ -2448,9 +2497,12 @@ function animateMetrics() {
     const draw = now => {
       const t = Math.min(1, (now - start) / duration);
       const eased = 1 - Math.pow(1 - t, 3);
-      if (index === 0) el.textContent = `${Math.round(274 * eased)}만`;
+      if (index === 0) {
+        const v = Math.round(10000 * eased);
+        el.textContent = v >= 10000 ? '1억+' : `${v.toLocaleString()}만`;
+      }
       if (index === 1) el.textContent = `3주 → ${Math.round(21 - 17 * eased)}일`;
-      if (index === 2) el.textContent = `+${Math.round(510000 * eased).toLocaleString()}`;
+      if (index === 2) el.textContent = `${Math.round(274 * eased)}만`;
       if (t < 1) metricRafIds.push(requestAnimationFrame(draw)); else el.textContent = target;
     };
     metricRafIds.push(requestAnimationFrame(draw));
